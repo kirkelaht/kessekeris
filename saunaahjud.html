@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kesse – puuküttega keris | Bixi OÜ</title>
+  <meta name="description" content="Kesse on puuküttega saunakeris väikestele ja keskmistele leiliruumidele. Põhjamaine vastupidavus, pehme leil ja selged paigaldusnõuded." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    .container { max-width: 1140px; }
+    :root { --gold: #c8a858; --gold-600: #b7943f; --gold-700: #987c33; }
+    .bg-hero { background: radial-gradient(1200px 600px at 100% -10%, rgba(200,168,88,.18), transparent),
+                           radial-gradient(900px 500px at -10% 0%, rgba(0,0,0,.12), transparent); }
+    .btn-gold { background: var(--gold); color: #111827; }
+    .btn-gold:hover { background: var(--gold-600); }
+    .chip { border: 1px solid rgba(200,168,88,.35); background: rgba(200,168,88,.08); color: var(--gold-700); }
+    .link-gold { text-decoration-color: var(--gold); }
+    .card { transition: transform .2s ease, box-shadow .2s ease; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,.12); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+  </style>
+</head>
+<body class="antialiased text-slate-100 selection:bg-yellow-200/40 bg-black">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 w-full border-b border-white/10 bg-black/70 backdrop-blur">
+    <div class="container mx-auto flex items-center justify-between px-4 py-3">
+      <a href="#top" class="flex items-center gap-2 font-extrabold tracking-tight">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-[var(--gold)]"><path d="M12 2l8.5 5v10L12 22 3.5 17V7L12 2z" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity=".08"/></svg>
+        <span class="text-xl">Kesse</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a href="#toode" class="hover:text-[var(--gold)]">Toode</a>
+        <a href="#eelised" class="hover:text-[var(--gold)]">Eelised</a>
+        <a href="#andmed" class="hover:text-[var(--gold)]">Tehnilised andmed</a>
+        <a href="#galerii" class="hover:text-[var(--gold)]">Galerii</a>
+        <a href="#hind" class="hover:text-[var(--gold)]">Hind</a>
+        <a href="#kontakt" class="hover:text-[var(--gold)]">Kontakt</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="menuBtn" class="rounded-xl border border-white/20 px-3 py-2 text-sm text-slate-200">Menüü</button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-black">
+      <div class="container mx-auto px-4 py-3 grid gap-2 text-sm text-slate-200">
+        <a href="#toode" class="py-1">Toode</a>
+        <a href="#eelised" class="py-1">Eelised</a>
+        <a href="#andmed" class="py-1">Tehnilised andmed</a>
+        <a href="#galerii" class="py-1">Galerii</a>
+        <a href="#hind" class="py-1">Hind</a>
+        <a href="#kontakt" class="py-1">Kontakt</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="bg-hero">
+    <div class="container mx-auto grid items-center gap-8 px-4 py-16 md:grid-cols-2 md:py-24">
+      <div>
+        <div class="chip inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium">
+          <span>UUS</span>
+          <span class="h-1 w-1 rounded-full bg-[var(--gold)]"></span>
+          <span>Kesse puuküttega keris</span>
+        </div>
+        <h1 class="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">Pehme leil. <span class="text-[var(--gold)]">Tugev teras.</span></h1>
+        <p class="mt-4 text-slate-300 md:text-lg">Kompaktne ja vastupidav keris väikesele ja keskmisele leiliruumile. Töökindel konstruktsioon, mis tagab kiire kuumenemise ja ühtlase temperatuuri.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="#hind" class="rounded-2xl btn-gold px-5 py-3 shadow">Küsi pakkumist</a>
+          <a href="#andmed" class="rounded-2xl border border-white/20 px-5 py-3 text-slate-100 hover:bg-white/5">Vaata andmeid</a>
+        </div>
+        <div class="mt-6 flex items-center gap-6 text-xs text-slate-400">
+          <div class="flex items-center gap-2"><span class="inline-block h-2 w-2 rounded-full bg-[var(--gold)]"></span> Garantii 24 kuud</div>
+          <div class="flex items-center gap-2"><span class="inline-block h-2 w-2 rounded-full bg-[var(--gold)]"></span> Valmistatud Eestis</div>
+        </div>
+      </div>
+      <div class="relative">
+                <div class="aspect-[4/5] w-full overflow-hidden rounded-3xl border border-white/10 bg-black shadow-sm">
+            <img src="image/Maxine_meeleolu_lavalt_eesruumi.jpg" alt="Kesse keris" class="h-full w-full object-cover opacity-90"/>
+          </div>
+        <div class="pointer-events-none absolute -bottom-6 -right-4 hidden rounded-2xl bg-black/80 p-4 shadow-lg ring-1 ring-white/10 md:block">
+          <p class="text-xs text-slate-400">Kivimaht</p>
+          <p class="text-lg font-bold text-slate-100">90–110 kg</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK POINTS -->
+  <section class="border-t border-white/10 bg-black">
+    <div class="container mx-auto grid grid-cols-2 gap-6 px-4 py-8 md:grid-cols-4">
+      <div class="flex items-center gap-3 text-slate-200">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-[var(--gold)]"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Kiire kuumenemine</span>
+      </div>
+      <div class="flex items-center gap-3 text-slate-200">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-[var(--gold)]"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Pehme leil</span>
+      </div>
+      <div class="flex items-center gap-3 text-slate-200">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-[var(--gold)]"><path d="M12 2l8.5 5v10L12 22 3.5 17V7L12 2z" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Tugev konstruktsioon</span>
+      </div>
+      <div class="flex items-center gap-3 text-slate-200">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-[var(--gold)]"><path d="M4 12h16M4 6h16M4 18h16" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Lihtne paigaldus</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT SECTION -->
+  <section id="toode" class="border-t border-white/10 bg-[#0b0b0b]">
+    <div class="container mx-auto grid items-center gap-10 px-4 py-16 md:grid-cols-2">
+      <div class="order-2 md:order-1">
+        <h2 class="text-2xl font-bold md:text-3xl">Kesse – puuküttega saunakeris</h2>
+        <p class="mt-3 text-slate-300">Kompaktne keris on mõeldud 6–13 m³ leiliruumidele. Soovituslik kivide fraktsioon on 10–15 cm; kivide kogus 90–110 kg. Konstruktsioon tagab tõhusa õhuvahetuse ja ühtlase kivide kuumenemise.</p>
+        <ul class="mt-6 grid gap-3 text-sm text-slate-300">
+          <li class="flex items-start gap-3"><span class="mt-1 inline-block h-2 w-2 rounded-full bg-[var(--gold)]"></span> Kütus: kuivad puuhalud (kuni 30 cm)</li>
+          <li class="flex items-start gap-3"><span class="mt-1 inline-block h-2 w-2 rounded-full bg-[var(--gold)]"></span> Töökindel teraskorpus ja hooldusluugid</li>
+          <li class="flex items-start gap-3"><span class="mt-1 inline-block h-2 w-2 rounded-full bg-[var(--gold)]"></span> Ühendus korstnasse: siseläbimõõt Ø115 mm</li>
+          <li class="flex items-start gap-3"><span class="mt-1 inline-block h-2 w-2 rounded-full bg-[var(--gold)]"></span> Valmistatud ja testitud Eestis</li>
+        </ul>
+        <div class="mt-6 flex gap-3">
+          <a href="#andmed" class="rounded-xl border border-white/20 px-4 py-2">Tehnilised andmed</a>
+          <a href="#galerii" class="rounded-xl border border-white/20 px-4 py-2">Vaata pilte</a>
+        </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black shadow-sm">
+          <img src="image/Maxine_kumavkeris.jpg" alt="Kesse keris – detail" class="h-full w-full object-cover opacity-90" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES GRID -->
+  <section id="eelised" class="border-t border-white/10 bg-black">
+    <div class="container mx-auto px-4 py-16">
+      <h2 class="text-2xl font-bold md:text-3xl">Miks valida Kesse?</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="card rounded-2xl border border-white/10 p-6">
+          <h3 class="font-semibold text-slate-100">Efektiivne õhuvool</h3>
+          <p class="mt-2 text-sm text-slate-300">Konstruktsioon suunab õhu kivide vahele, tagades kiire kuumenemise ja ühtlase temperatuuri.</p>
+        </div>
+        <div class="card rounded-2xl border border-white/10 p-6">
+          <h3 class="font-semibold text-slate-100">Püsiv kvaliteet</h3>
+          <p class="mt-2 text-sm text-slate-300">5 mm kolde seinad, hooldusluugid ja lihtne puhastamine pikaks kasutuseaks.</p>
+        </div>
+        <div class="card rounded-2xl border border-white/10 p-6">
+          <h3 class="font-semibold text-slate-100">Põhjamaine disain</h3>
+          <p class="mt-2 text-sm text-slate-300">Minimalistlik musta‑kuldse esteetikaga – sobitub nii modernsesse kui klassikalisse sauna.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="galerii" class="border-t border-white/10 bg-black">
+    <div class="container mx-auto px-4 py-16">
+      <h2 class="text-2xl font-bold md:text-3xl">Galerii</h2>
+      <div class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <img class="aspect-square w-full rounded-2xl object-cover opacity-90" src="image/Maxine_kumavkeris.jpg" alt="Kesse keris 1"/>
+        <img class="aspect-square w-full rounded-2xl object-cover opacity-90" src="image/DSCF1008 copy.jpg" alt="Kesse keris 2"/>
+        <img class="aspect-square w-full rounded-2xl object-cover opacity-90" src="image/Maxine_meeleolu_lavalt_eesruumi.jpg" alt="Kesse keris 3"/>
+        <img class="aspect-square w-full rounded-2xl object-cover opacity-90" src="image/Maxine_meeleolu_lava_viht.jpg" alt="Kesse keris 4"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECS TABLE -->
+  <section id="andmed" class="border-t border-white/10 bg-[#0b0b0b]">
+    <div class="container mx-auto px-4 py-16">
+      <h2 class="text-2xl font-bold md:text-3xl">Tehnilised andmed</h2>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <dl class="divide-y divide-white/10">
+            <div class="grid grid-cols-2 gap-2 p-4"><dt class="text-slate-400">Mudel</dt><dd class="text-right font-medium text-slate-100">Kesse</dd></div>
+            <div class="grid grid-cols-2 gap-2 p-4"><dt class="text-slate-400">Küttevõimsus</dt><dd class="text-right font-medium text-slate-100">15,4 kW</dd></div>
+            <div class="grid grid-cols-2 gap-2 p-4"><dt class="text-slate-400">Leiliruumi maht</dt><dd class="text-right font-medium text-slate-100">6–13 m³</dd></div>
+            <div class="grid grid-cols-2 gap-2 p-4"><dt class="text-slate-400">Kütus</dt><dd class="text-right font-medium text-slate-100">Puuhalud (≤ 30 cm)</dd></div>
+            <div class="grid grid-cols-2 gap-2 p-4"><dt class="text-slate-400">Efektiivsus</dt><dd class="text-right font-medium text-slate-100">67%</dd></div>
+          </dl>
+          <dl class="divide-y divide-white/10">
+            <div class="grid grid-cols-2 gap-2 p-4"><dt class="text-slate-400">Suitsulõõri Ø (sees)</dt><dd class="text-right font-medium text-slate-100">115 mm</dd></div>
+            <div class="grid grid-cols-2 gap-2 p-4"><dt class="text-slate-400">Tõmme</dt><dd class="text-right font-medium text-slate-100">12 Pa</dd></div>
+            <div class="grid grid-cols-2 gap-2 p-4"><dt class="text-slate-400">Korstna temp.klass</dt><dd class="text-right font-medium text-slate-100">T600</dd></div>
+            <div class="grid grid-cols-2 gap-2 p-4"><dt class="text-slate-400">Kaal (ilma kivideta)</dt><dd class="text-right font-medium text-slate-100">~52 kg</dd></div>
+            <div class="grid grid-cols-2 gap-2 p-4"><dt class="text-slate-400">Kivimaht / fraktsioon</dt><dd class="text-right font-medium text-slate-100">90–110 kg / 10–15 cm</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="mt-3 text-sm text-slate-400">Märkused: tegelikud mõõdud ja detailid vastavalt tehnilisele joonisele ja paigaldusjuhendile. Järgida ohutuskauguseid ja ventilatsiooni nõudeid.</p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-black p-6">
+          <h3 class="font-semibold text-slate-100">Ohutuskaugused</h3>
+          <ul class="mt-2 text-sm text-slate-300 space-y-1">
+            <li>Katus/lae minimaalne kaugus kivipinnast: <strong>1140 mm</strong></li>
+            <li>Külgedel süttivate materjalideni: <strong>190 mm</strong></li>
+            <li>Tagant: <strong>250 mm</strong></li>
+            <li>Eest (ukse ees): <strong>900 mm</strong></li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-black p-6">
+          <h3 class="font-semibold text-slate-100">Ventilatsioon & ühendus</h3>
+          <ul class="mt-2 text-sm text-slate-300 space-y-1">
+            <li>Min. ventilatsiooniavade ristlõige: <strong>7850 mm²</strong></li>
+            <li>Korstnalõõri min. ristlõige: <strong>10 200 mm²</strong></li>
+            <li>Soovitatav flööri ühendus: <strong>T600</strong>, sujuv tõmme, vältida langevaid lõike.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING / CTA -->
+  <section id="hind" class="border-t border-white/10 bg-[#0b0b0b]">
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid items-center gap-8 md:grid-cols-2">
+        <div>
+          <h2 class="text-2xl font-bold md:text-3xl mb-4">Hind ja tellimine</h2>
+          <p class="text-slate-300 mb-4">Kesse on ettetellimisel. Täida allolev vorm – saad personaalse pakkumise koos tarneaja ja paigaldusega.</p>
+          <p class="text-slate-300 mb-6">Soovid B2B pakkumist või koostööd? Räägime mõõtudest, tarneaegadest ja eritellimustest.</p>
+          <div class="rounded-2xl border border-white/10 bg-black p-6 shadow-sm">
+            <form action="https://formspree.io/f/mzzvoqvq" method="POST" class="grid gap-4" onsubmit="alert('Aitäh! Võtame peagi ühendust.');">
+            <div>
+              <label class="text-sm text-slate-400" for="name">Nimi</label>
+              <input id="name" name="name" required class="mt-1 w-full rounded-xl border border-white/10 bg-black px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[var(--gold)]" placeholder="Ees- ja perekonnanimi" />
+            </div>
+            <div>
+              <label class="text-sm text-slate-400" for="email">E-post</label>
+              <input id="email" name="email" type="email" required class="mt-1 w-full rounded-xl border border-white/10 bg-black px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[var(--gold)]" placeholder="nimi@ettevõte.ee" />
+            </div>
+            <div>
+              <label class="text-sm text-slate-400" for="message">Sõnum</label>
+              <textarea id="message" name="message" rows="4" class="mt-1 w-full rounded-xl border border-white/10 bg-black px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[var(--gold)]" placeholder="Kirjelda leiliruumi mahtu, korstna lahendust ja soove."></textarea>
+            </div>
+            <button type="submit" class="rounded-2xl px-5 py-3 font-medium btn-gold">Küsi pakkumist</button>
+            <p class="text-xs text-xs text-slate-500">Saates päringu nõustud, et töötleme sinu esitatud andmeid päringu täitmiseks.</p>
+          </form>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black shadow-sm">
+          <img src="image/Maxine_meeleolu_lavalt_eesruumi.jpg" alt="Sauna interjöör" class="h-full w-full object-cover opacity-90" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="border-t border-white/10 bg-black">
+    <div class="container mx-auto px-4 py-16">
+      <h2 class="text-2xl font-bold md:text-3xl">KKK</h2>
+      <div class="mt-6 grid gap-3">
+        <div class="faq-item rounded-2xl border border-white/10 p-5">
+          <button class="faq-toggle flex w-full items-center justify-between text-left font-medium text-slate-100">Kas Kesse sobib 10 m³ leiliruumi?<span>＋</span></button>
+          <div class="faq-answer text-sm text-slate-300">
+            <p class="pt-3">Jah, soovituslik vahemik on 6–13 m³. Arvestame soojustuse ja klaaspindadega – vajadusel soovitame suurema mudeli.</p>
+          </div>
+        </div>
+        <div class="faq-item rounded-2xl border border-white/10 p-5">
+          <button class="faq-toggle flex w-full items-center justify-between text-left font-medium text-slate-100">Milliseid kive kasutada?<span>＋</span></button>
+          <div class="faq-answer text-sm text-slate-300">
+            <p class="pt-3">Soovitame spetsiaalseid kerisekive fraktsiooniga 10–15 cm. Enne ladumist pese kivid; vaheta murenenud kivid 1–2 aasta järel.</p>
+          </div>
+        </div>
+        <div class="faq-item rounded-2xl border border-white/10 p-5">
+          <button class="faq-toggle flex w-full items-center justify-between text-left font-medium text-slate-100">Miks esmakütmisel tekib lõhn?<span>＋</span></button>
+          <div class="faq-answer text-sm text-slate-300">
+            <p class="pt-3">Värv saavutab lõpliku kõvaduse esmakütmisel. Soovitame esmane kütmine teha väljas või väga hästi ventileeritult.</p>
+          </div>
+        </div>
+        <div class="faq-item rounded-2xl border border-white/10 p-5">
+          <button class="faq-toggle flex w-full items-center justify-between text-left font-medium text-slate-100">Milline peaks olema ventilatsioon?<span>＋</span></button>
+          <div class="faq-answer text-sm text-slate-300">
+            <p class="pt-3">Värske õhu sisselaskeava kerise juures ja väljatõmme leiliruumi teises servas. Minimaalne sisselaskeristlõige 7850 mm².</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-black">
+    <div class="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-6 text-xs text-slate-400 md:flex-row">
+      <p>© <span id="year"></span> Bixi OÜ. Kõik õigused kaitstud.</p>
+      <div class="flex items-center gap-4">
+        <a href="#toode" class="hover:text-[var(--gold)]">Toode</a>
+        <a href="#eelised" class="hover:text-[var(--gold)]">Eelised</a>
+        <a href="#andmed" class="hover:text-[var(--gold)]">Andmed</a>
+        <a href="#hind" class="hover:text-[var(--gold)]">Hind</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        item.classList.toggle('open');
+      });
+    });
+
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
