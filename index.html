@@ -192,10 +192,10 @@
     <div class="container mx-auto px-4 py-16">
       <h2 class="text-2xl font-bold md:text-3xl">Galerii</h2>
       <div class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
-        <img class="aspect-square w-full rounded-2xl object-cover opacity-90" src="./image/tyhi_keris.jpg" alt="Kesse keris 1"/>
-        <img class="aspect-square w-full rounded-2xl object-cover opacity-90" src="./image/Maxine_kumavkeris.jpg" alt="Kesse keris 2"/>
-        <img class="aspect-square w-full rounded-2xl object-cover opacity-90" src="./image/Maxine_meeleolu_lavalt_eesruumi.jpg" alt="Kesse keris 3"/>
-        <img class="aspect-square w-full rounded-2xl object-cover opacity-90" src="./image/Maxine_meeleolu_lava_viht.jpg" alt="Kesse keris 4"/>
+        <img class="gallery-image cursor-pointer aspect-square w-full rounded-2xl object-cover opacity-90 hover:opacity-100 transition-opacity" src="./image/tyhi_keris.jpg" alt="Kesse keris 1" data-image="./image/tyhi_keris.jpg" data-alt="Kesse keris 1"/>
+        <img class="gallery-image cursor-pointer aspect-square w-full rounded-2xl object-cover opacity-90 hover:opacity-100 transition-opacity" src="./image/Maxine_kumavkeris.jpg" alt="Kesse keris 2" data-image="./image/Maxine_kumavkeris.jpg" data-alt="Kesse keris 2"/>
+        <img class="gallery-image cursor-pointer aspect-square w-full rounded-2xl object-cover opacity-90 hover:opacity-100 transition-opacity" src="./image/Maxine_meeleolu_lavalt_eesruumi.jpg" alt="Kesse keris 3" data-image="./image/Maxine_meeleolu_lavalt_eesruumi.jpg" data-alt="Kesse keris 3"/>
+        <img class="gallery-image cursor-pointer aspect-square w-full rounded-2xl object-cover opacity-90 hover:opacity-100 transition-opacity" src="./image/Maxine_meeleolu_lava_viht.jpg" alt="Kesse keris 4" data-image="./image/Maxine_meeleolu_lava_viht.jpg" data-alt="Kesse keris 4"/>
       </div>
     </div>
   </section>
@@ -327,8 +327,22 @@
         <a href="#hind" class="hover:text-[var(--gold)]">Hind</a>
       </div>
     </div>
-  </footer>
-
+      </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm">
+    <div class="flex h-full w-full items-center justify-center p-4">
+      <div class="relative max-h-full max-w-full">
+        <img id="lightboxImage" src="" alt="" class="max-h-full max-w-full rounded-lg object-contain" />
+        <button id="closeLightbox" class="absolute -top-4 -right-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -422,6 +436,44 @@
         // Re-enable submit button
         submitButton.disabled = false;
         submitButton.textContent = 'Küsi pakkumist';
+      }
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const closeLightbox = document.getElementById('closeLightbox');
+    const galleryImages = document.querySelectorAll('.gallery-image');
+
+    // Open lightbox when clicking on gallery images
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImage.src = img.dataset.image;
+        lightboxImage.alt = img.dataset.alt;
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      });
+    });
+
+    // Close lightbox when clicking close button
+    closeLightbox.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = ''; // Restore scrolling
+    });
+
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
       }
     });
   </script>
