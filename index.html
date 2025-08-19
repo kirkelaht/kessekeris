@@ -352,10 +352,13 @@
   
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
+    "@context": "https://schema.org/",
     "@type": "Product",
-    "name": "Kesse puuküttega keris",
-    "description": "Kesse on puuküttega saunakeris väikestele ja keskmistele leiliruumidele. Põhjamaine vastupidavus, pehme leil ja selged paigaldusnõuded.",
+    "name": "Kesse",
+    "image": [
+      "https://www.kessekeris.ee/image/kesse.jpg"
+    ],
+    "description": "Kesse on kompaktne ja vastupidav puuküttega saunakeris väikesele ja keskmisele leiliruumile (6–13 m³). Töökindel teraskonstruktsioon, kiire kuumenemine, kivimaht 90–110 kg, kütus: puuhalud (kuni 30 cm), võimsus 15,4 kW, efektiivsus 67%, suitsulõõri läbimõõt 115 mm, kaal 52 kg (ilma kivideta). Valmistatud Eestis.",
     "brand": {
       "@type": "Brand",
       "name": "Kesse"
@@ -365,22 +368,24 @@
       "name": "Bixi OÜ",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Tallinn",
         "addressCountry": "EE"
       }
     },
-    "category": "Saunaahjud",
-    "material": "Teras",
-    "powerConsumption": "15.4 kW",
-    "roomVolume": "6-13 m³",
-    "stoneCapacity": "90-110 kg",
-    "warranty": "24 kuud",
-    "image": "./image/tyhi_keris.jpg",
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Küttevõimsus", "value": "15,4 kW" },
+      { "@type": "PropertyValue", "name": "Leiliruumi maht", "value": "6–13 m³" },
+      { "@type": "PropertyValue", "name": "Kütus", "value": "Puuhalud (≤ 30 cm)" },
+      { "@type": "PropertyValue", "name": "Efektiivsus", "value": "67%" },
+      { "@type": "PropertyValue", "name": "Suitsulõõri läbimõõt", "value": "115 mm" },
+      { "@type": "PropertyValue", "name": "Kaal (ilma kivideta)", "value": "52 kg" },
+      { "@type": "PropertyValue", "name": "Kivimaht / fraktsioon", "value": "90–110 kg / 10–15 cm" },
+      { "@type": "PropertyValue", "name": "Mõõtmed", "value": "45 x 69 x 70 cm" }
+    ],
     "offers": {
       "@type": "Offer",
-      "availability": "https://schema.org/PreOrder",
-      "priceCurrency": "EUR",
-      "description": "Ettetellimisel"
+      "url": "https://www.kessekeris.ee/",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "EUR"
     }
   }
   </script>
